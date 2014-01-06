@@ -46,9 +46,34 @@ var home_controller = function(app) {
 
     app.post('/save', function(req, res){
         var params = req.body;
-        var newProjectData = {
-            
+        var data = {
+            id: pushpath.utils.createUUID(),
+            name: params.config_name,
+            date_created: new Date().getTime(),
+            plugins: {
+                vagrant: {
+                    config: {
+                        config_vm_box: params.config_vm_box,
+                        config_vm_box_url: params.config_vm_box_url,
+                        network: {
+                            network_type: params.network_type,
+                            network_ip: params.network_ip,
+                            network_hostname: params.network_hostname
+                        },
+                        provider: {
+                            type: params.provider_type,
+                            name: params.provider_name
+                        }
+                    }
+                }
+            }
         }
+
+        pushpath.setupProject();
+        pushpath.config.write(data);
+        pushpath.vagrant.applyConfig();
+
+        res.redirect('/');
     });
 }
 
