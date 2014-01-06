@@ -1,0 +1,25 @@
+{
+    "id": "",
+    "name": "",
+    "version": "",
+    "date_created": "",
+    "date_updated": "",
+    "plugins": {
+        "vagrant": {
+            "config": {
+                "config_vm_box": "",
+                "config_vm_box_url": "",
+                "network": {
+                    "network_type": "",
+                    "network_ip": "",
+                    "network_hostname": ""
+                },
+                "provider": {
+                    "type": "",
+                    "name": ""
+                }
+            }
+        }
+    }
+}
+
