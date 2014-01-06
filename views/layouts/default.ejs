@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xng-app="pushpath">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Pushpath</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel='stylesheet' href='/css/bootstrap/bootstrap.min.css' />
+    <!-- Custom styles for this template -->
+    <link rel='stylesheet' href='/css/bootstrap/sticky-footer-navbar.css' />
+    <link rel='stylesheet' href='/css/pushpath.css' />
+</head>
+
+<body>
+
+<div id="wrap">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Pushpath</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">System</a></li>
+                </ul>
+                <p class="navbar-text navbar-right">Status: Running</p>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+
+    <div class="navbar navbar-default" style="margin-top: 50px;">
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <p class="navbar-text navbar-right">
+                    VM Commands
+                    <a href="/vagrant/command?action=start" role="button" class="btn btn-default btn-xs">Start</a>
+                    <a href="/vagrant/command?action=stop" role="button" class="btn btn-default btn-xs">Stop</a>
+                    <a href="/vagrant/command?action=suspend" role="button" class="btn btn-default btn-xs">Suspend</a>
+                    <a href="/vagrant/command?action=resume" role="button" class="btn btn-default btn-xs">Resume</a>
+                    <a href="/vagrant/command?action=provision" role="button" class="btn btn-default btn-xs">Provision</a>
+                    <a href="/vagrant/command?action=destroy" role="button" class="btn btn-default btn-xs">Destroy</a>
+                </p>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+
+    <!-- Begin page content -->
+    <div class="container" style="padding-top: 0px;">
+        <%-body -%>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="container">
+        <p class="text-muted credit">© 2013-2014 mindginative</p>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/js/lib/angular/angular.js"></script>
+
+</body>
+</html>

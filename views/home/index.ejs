@@ -1,0 +1,53 @@
+<% layout('../layouts/default.ejs') -%>
+
+<!-- dashboard -->
+<div class="row">
+    <div class="col-xs-6 col-md-4">
+        <div class="page-header">
+            <h3>Dashboard</h3>
+        </div>
+
+        <h3><small>Project</small></h3>
+        <dl class="dl-horizontal">
+            <dt>Name</dt>
+            <dd><%=config.name%></dd>
+
+            <dt>Created</dt>
+            <dd><%=moment(config.date_created).fromNow()%></dd>
+
+            <dt>Last Update</dt>
+            <dd><%=moment(config.date_updated).fromNow()%></dd>
+        </dl>
+
+        <h3><small>Disk</small></h3>
+        <dl class="dl-horizontal">
+            <dt>Size</dt>
+            <dd>50G</dd>
+
+            <dt>Usage</dt>
+            <dd>15G</dd>
+        </dl>
+
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-8">
+        <div class="page-header">
+            <h3>Admin Area</h3>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <div style="max-width: 140px; margin: 0 auto 10px;" class="well">
+                    <a href="/system">
+                        System
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <div style="max-width: 140px; margin: 0 auto 10px;" class="well">
+                    <a href="/vagrant">
+                        Vagrant
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- /dashboard -->

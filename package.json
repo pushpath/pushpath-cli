@@ -1,0 +1,38 @@
+{
+    "name": "pushpath",
+    "version": "0.0.1",
+    "description": "tba",
+    "main": "pushpath",
+    "bin": {
+        "pushpath": "./bin/pushpath"
+    },
+    "scripts": {
+        "test": "jasmine-node --color spec"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pushpath/pushpath-cli.git"
+    },
+    "bugs": {
+        "url": "https://github.com/pushpath/pushpath-cli/issues"
+    },
+    "keywords": [
+        "pushpath",
+        "tooling",
+        "deployment",
+        "automation",
+        "client",
+        "cli"
+    ],
+    "dependencies": {
+        "shelljs": "0.2.6",
+        "optimist": "0.6.0",
+        "express": "3.x",
+        "ejs": "*",
+        "ejs-locals": "*",
+        "dot": "1.0.2",
+        "moment": "2.5.0"
+    },
+    "author": "Richard Sentino",
+    "license": "Apache version 2.0"
+}

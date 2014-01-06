@@ -1,0 +1,19 @@
+# This template is managed by Pushpath
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+    config.vm.box = "{{=tpl.config_vm_box}}"
+    config.vm.box_url = "{{=tpl.config_vm_box_url}}"
+
+    # Networking
+    config.vm.define :net do |net|
+        net.vm.network :{{=tpl.network_type}}, ip: "{{=tpl.network_ip}}"
+    end
+
+    # VM provider
+    config.vm.provider :{{=tpl.provider_type}} do |vm|
+       vm.name = "{{=tpl.provider_name}}"
+    end
+end
