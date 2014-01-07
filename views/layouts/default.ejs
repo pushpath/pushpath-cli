@@ -31,38 +31,22 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">System</a></li>
+                    <li class="active"><a href="/">Dashboard</a></li>
                 </ul>
                 <p class="navbar-text navbar-right">Status: Running</p>
             </div><!--/.nav-collapse -->
         </div>
     </div>
 
-    <div class="navbar navbar-default" style="margin-top: 50px;">
-        <div class="container">
-            <div class="collapse navbar-collapse">
-                <p class="navbar-text navbar-right">
-                    VM Commands
-                    <a href="/vagrant/command?action=start" role="button" class="btn btn-default btn-xs">Start</a>
-                    <a href="/vagrant/command?action=stop" role="button" class="btn btn-default btn-xs">Stop</a>
-                    <a href="/vagrant/command?action=suspend" role="button" class="btn btn-default btn-xs">Suspend</a>
-                    <a href="/vagrant/command?action=resume" role="button" class="btn btn-default btn-xs">Resume</a>
-                    <a href="/vagrant/command?action=provision" role="button" class="btn btn-default btn-xs">Provision</a>
-                    <a href="/vagrant/command?action=destroy" role="button" class="btn btn-default btn-xs">Destroy</a>
-                </p>
-            </div><!--/.nav-collapse -->
-        </div>
-    </div>
-
     <!-- Begin page content -->
-    <div class="container" style="padding-top: 0px;">
+    <div class="container">
         <%-body -%>
     </div>
 </div>
 
 <div id="footer">
     <div class="container">
-        <p class="text-muted credit">© 2013-2014 mindginative</p>
+        <p class="text-muted credit">Code licensed under <a target="_blank" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a> |  With all the love in the world by <a href="https://twitter.com/mindginative">@mindginative</a> | <a href="https://github.com/pushpath/pushpath-cli/issues">Report a bug</a> | Version 0.1.0</p>
     </div>
 </div>
 
