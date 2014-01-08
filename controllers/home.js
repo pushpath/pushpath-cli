@@ -22,10 +22,15 @@ var moment = require('moment');
 
 var home_controller = function(app) {
     app.get('/', function(req, res){
-        var config = pushpath.config.read();
+        var config = pushpath.config.read(),
+            status = pushpath.vagrant.status();
 
         if (config) {
-            res.render('home/index', {config: config, moment: moment});
+            res.render('home/index', {
+                config: config,
+                moment: moment,
+                status: status
+            });
         } else {
             res.redirect('/new');
         }

@@ -7,8 +7,9 @@
             <h3>Quick Info</h3>
         </div>
 
-        <h3><small>Services</small></h3>
         <dl class="dl-horizontal">
+            <dt>VM Status</dt>
+            <dd><span class="label label-info"><%=status%></span></dd>
             <dt>Command</dt>
             <dd>
                 <form action="/vagrant/command" method="get">
@@ -32,7 +33,7 @@
             <dt>Created</dt>
             <dd><%=moment(config.date_created).fromNow()%></dd>
 
-            <dt>Last Update</dt>
+            <dt>Last Updated</dt>
             <dd><%=moment(config.date_updated).fromNow()%></dd>
         </dl>
 
