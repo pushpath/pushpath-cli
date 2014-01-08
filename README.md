@@ -13,11 +13,6 @@ For people/someone who are interested into  [Continuous Delivery (CD)](http://en
 
 The project is still in early development stages. I’ve only been working on it for about 3 weeks as of this writing (9/Jan/2014)
 
-### Acknowledgement
-
-Acknowledgement goes to the [Cordova-js](https://github.com/apache/cordova-js) project.
-This project is heavily based on a stripped down Cordova-js tooling and libraries eg. grunt tasks, simplified require/define library, self-contained module mapper.
-
 ### License
 
 Code licensed under [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0)
