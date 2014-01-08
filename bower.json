@@ -1,12 +1,10 @@
 {
   "name": "pushpath",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "authors": [
     "Richard Sentino <richard@mingdinative.com>"
   ],
-  "description": "tba",
   "main": "./public/css/pushpath.css",
-  "license": "Apache v2",
   "homepage": "http://pushpath.github.io/home",
   "private": true,
   "ignore": [
@@ -18,5 +16,6 @@
   ],
   "dependencies": {
     "angular": "1.2.6"
-  }
+  },
+  "license": "Apache-2.0"
 }

@@ -1,13 +1,14 @@
 {
     "name": "pushpath",
-    "version": "0.0.1",
-    "description": "tba",
-    "main": "pushpath",
+    "version": "0.1.0",
+    "author": "Richard Sentino <richard@mindginative.com>",
+    "homepage": "http://pushpath.github.io/home",
+    "description": "Pushpath command line interface tool",
     "bin": {
         "pushpath": "./bin/pushpath"
     },
     "scripts": {
-        "test": "jasmine-node --color spec"
+        "start": "./bin/pushpath"
     },
     "repository": {
         "type": "git",
@@ -22,7 +23,8 @@
         "deployment",
         "automation",
         "client",
-        "cli"
+        "cli",
+        "webui"
     ],
     "dependencies": {
         "shelljs": "0.2.6",
@@ -31,8 +33,8 @@
         "ejs": "*",
         "ejs-locals": "*",
         "dot": "1.0.2",
-        "moment": "2.5.0"
+        "moment": "2.5.0",
+        "pushpathjs": "0.1.0"
     },
-    "author": "Richard Sentino",
-    "license": "Apache version 2.0"
+    "license": "Apache-2.0"
 }
