@@ -2,12 +2,39 @@
 Using an existing technologies eg. Docker.io, Vagrant, Puppet, Virtualbox, or VMWare - they'll be glued together to form a platform that suits your needs.
 Such platform could be a [LAMP](http://en.wikipedia.org/wiki/LAMP_%28software_bundle%29), [LYME](http://en.wikipedia.org/wiki/LYME_%28software_bundle%29) or [MEAN](http://mean.io/)
 
-For people/someone who are interested into  [Continuous Delivery (CD)](http://en.wikipedia.org/wiki/Continuous_delivery) but doesn't have the time to spin their head around for a start in then this might be a good jumpstart.
-
 ### Goals
 
-* Provision lightweight virtual machines w/ tools for CD or CI
+* Provision lightweight virtual machines w/ tools for Devs, QA, production or staging deployment environment
 * Build virtual machines for LAMP, LYME or MEAN stack
+
+### System Requirements
+
+* [Node.js](http://www.nodejs.org)
+* [Vagrant](http://vagrantup.com/)
+* [Virtualbox](http://virtualbox.org/)
+
+### Installation
+
+Install Pushpath CLI
+
+    $> npm install pushpath -g
+
+### Howto
+
+Create a project directory and change to the new directory
+
+    $> mkdir test-vm-project && cd test-vm-project/
+
+Run Pushpath
+
+    $> pushpath
+
+By default, Pushpath will listen on port 3000
+
+    http://localhost:3000
+
+Type the URL in your browser and configure your new project via the web interface
+
 
 ### Current Status
 
