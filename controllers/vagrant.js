@@ -34,6 +34,8 @@ var vagrant_controller = function(app) {
                     config: {
                         config_vm_box: params.config_vm_box,
                         config_vm_box_url: params.config_vm_box_url,
+                        config_vm_synced_folder_src: params.config_vm_synced_folder_src,
+                        config_vm_synced_folder_target: params.config_vm_synced_folder_target,
                         network: {
                             network_type: params.network_type,
                             network_ip: params.network_ip,

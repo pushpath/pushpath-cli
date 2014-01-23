@@ -62,6 +62,24 @@
                             <input type="text" class="form-control" id="vagrant-provider-name" placeholder="" value="<%=config.provider.name%>" name="provider_name">
                         </div>
                     </div>
+                </fieldset>
+                <fieldset>
+                    <legend><h5 class="text-muted">Synced Folder</h5></legend>
+                    <div class="form-group">
+                        <label for="config_vm_synced_folder_src" class="col-sm-4 control-label">Source</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="config_vm_synced_folder_src" placeholder="shared/www" value="<%=config.config_vm_synced_folder_src%>" name="config_vm_synced_folder_src">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="config_vm_synced_folder_target" class="col-sm-4 control-label">Target</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="config_vm_synced_folder_target" placeholder="/vagrant_www" value="<%=config.config_vm_synced_folder_target%>" name="config_vm_synced_folder_target">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend><h5 class="text-muted">Option</h5></legend>
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-10">
                             <div class="checkbox">
