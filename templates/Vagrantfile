@@ -10,6 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.box = "{{=tpl.config_vm_box}}"
     config.vm.box_url = "{{=tpl.config_vm_box_url}}"
+    config.vm.synced_folder "{{=tpl.config_vm_synced_folder_src}}", "{{=tpl.config_vm_synced_folder_target}}"
     
     # Networking
     config.vm.define :net do |net|
