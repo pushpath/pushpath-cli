@@ -40,6 +40,10 @@ Type the URL in your browser and configure your new project via the web interfac
 
 The project is still in early development stages. I’ve only been working on it for about 3 weeks as of this writing (9/Jan/2014)
 
+### I found some English errors on the web site or in the documentation
+
+Our apology for that. English is not the mother tong of the main author. And he didn't work enough at school at english subjects, he used to skip classes :). However, he will be very happy to receive your help to fix English errors.
+
 ### License
 
 Code licensed under [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0)
