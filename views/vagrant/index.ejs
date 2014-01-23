@@ -1,61 +1,86 @@
 <% layout('../layouts/default.ejs') -%>
 
+<strong><i class="glyphicon glyphicon-briefcase"></i> Vagrant</strong>
+<hr>
 <div class="row">
     <div class="col-md-12">
-        <div class="page-header">
-            <h3>Vagrant</h3>
+        <div class="well">
+            <form role="form" action="/vagrant/update" method="post" class="form-horizontal">
+                <fieldset>
+                    <legend><h5 class="text-muted">VM</h5></legend>
+                    <div class="form-group">
+                        <label for="vagrant-config-vm-box" class="col-sm-4 control-label">VM Box</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="vagrant-config-vm-box" placeholder="Base" value="<%=config.config_vm_box%>" name="config_vm_box">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="vagrant-config-vm-box-url" class="col-sm-4 control-label">VM Box Url</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="vagrant-config-vm-box-url" placeholder="" value="<%=config.config_vm_box_url%>" name="config_vm_box_url">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend><h5 class="text-muted">Network</h5></legend>
+                    <div class="form-group">
+                        <label for="vagrant-network-type" class="col-sm-4 control-label">Network Type</label>
+                        <div class="col-sm-6">
+                            <select class="form-control" name="network_type">
+                                <option value="public_network"  <%if (config.network.network_type == 'public_network') {%> selected <%}%> >Public</option>
+                                <option value="private_network" <%if (config.network.network_type == 'private_network') {%> selected <%}%> >Private</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="vagrant-network-ip" class="col-sm-4 control-label">Network IP</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="vagrant-network-ip" placeholder="" value="<%=config.network.network_ip%>" name="network_ip">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="vagrant-network-hostname" class="col-sm-4 control-label">Network Hostname</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="vagrant-network-hostname" placeholder="" value="<%=config.network.network_hostname%>" name="network_hostname">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend><h5 class="text-muted">Provider</h5></legend>
+                    <div class="form-group">
+                        <label for="vagrant-provider-type" class="col-sm-4 control-label">VM Provider Type</label>
+                        <div class="col-sm-6">
+                            <select class="form-control" name="provider_type">
+                                <option value="virtualbox" <%if (config.provider.type == 'virtualbox') {%> selected <%}%> >VirtualBox</option>
+                                <option value="vmware" <%if (config.provider.type == 'vmware') {%> selected <%}%> >VMWare</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="vagrant-provider-name" class="col-sm-4 control-label">VM Provider Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="vagrant-provider-name" placeholder="" value="<%=config.provider.name%>" name="provider_name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-10">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="config_apply"> Apply
+                                </label>
+                                <span class="help-block">Apply changes to the current Vagrantfile.</span>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-10">
+                        <button type="submit" class="btn btn-primary">Save</button> &nbsp;
+                        <a href="/">Cancel</a>
+                    </div>
+                </div>
+            </form>
+
         </div>
-
-        <div class="col-md-8">
-        <form role="form" action="/vagrant/update" method="post">
-            <fieldset>
-                <div class="form-group">
-                    <label for="vagrant-config-vm-box">VM Box</label>
-                    <input type="text" class="form-control" id="vagrant-config-vm-box" placeholder="Base" value="<%=config.config_vm_box%>" name="config_vm_box">
-                </div>
-                <div class="form-group">
-                    <label for="vagrant-config-vm-box-url">VM Box Url</label>
-                    <input type="text" class="form-control" id="vagrant-config-vm-box-url" placeholder="" value="<%=config.config_vm_box_url%>" name="config_vm_box_url">
-                </div>
-
-                <div class="form-group">
-                    <label for="vagrant-network-type">Network Type</label>
-                    <select class="form-control" name="network_type">
-                        <option value="public_network"  <%if (config.network.network_type == 'public_network') {%> selected <%}%> >Public</option>
-                        <option value="private_network" <%if (config.network.network_type == 'private_network') {%> selected <%}%> >Private</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="vagrant-network-ip">Network IP</label>
-                    <input type="text" class="form-control" id="vagrant-network-ip" placeholder="" value="<%=config.network.network_ip%>" name="network_ip">
-                </div>
-                <div class="form-group">
-                    <label for="vagrant-network-hostname">Network Hostname</label>
-                    <input type="text" class="form-control" id="vagrant-network-hostname" placeholder="" value="<%=config.network.network_hostname%>" name="network_hostname">
-                </div>
-
-                <div class="form-group">
-                    <label for="vagrant-provider-type">VM Provider Type</label>
-                    <select class="form-control" name="provider_type">
-                        <option value="virtualbox" <%if (config.provider.type == 'virtualbox') {%> selected <%}%> >VirtualBox</option>
-                        <option value="vmware" <%if (config.provider.type == 'vmware') {%> selected <%}%> >VMWare</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="vagrant-provider-name">VM Provider Name</label>
-                    <input type="text" class="form-control" id="vagrant-provider-name" placeholder="" value="<%=config.provider.name%>" name="provider_name">
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="config_apply"> Apply
-                    </label>
-                    <span class="help-block">Apply changes to the current Vagrantfile.</span>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Save</button>
-                <a href="/">Cancel</a>
-            </fieldset>
-        </form>
-        </div>
-    </div>
-</div>
+    </div><!-- /col-md-12 -->
+</div><!-- /row -->

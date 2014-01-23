@@ -1,71 +1,80 @@
 <% layout('../layouts/default.ejs') -%>
 
-<!-- dashboard -->
+<strong><i class="glyphicon glyphicon-dashboard"></i> Dashboard</strong>
+<hr>
 <div class="row">
-    <div class="col-xs-6 col-md-4">
-        <div class="page-header">
-            <h3>Quick Info</h3>
+    <div class="col-md-12">
+        <div class="alert alert-info">
+            <h5><%=status%></h5>
         </div>
+    </div><!-- /col-md-12 -->
+</div><!-- /row -->
 
-        <dl class="dl-horizontal">
-            <dt>VM Status</dt>
-            <dd><span class="label label-info"><%=status%></span></dd>
-            <dt>Command</dt>
-            <dd>
-                <form action="/vagrant/command" method="get">
-                <select name="action">
-                    <option value="start">Start</option>
-                    <option value="start">Stop</option>
-                    <option value="start">Suspend</option>
-                    <option value="start">Provision</option>
-                    <option value="start">Destroy</option>
-                </select>
-                <button type="submit" class="btn btn-success btn-xs">Go</button>
-                </form>
-            </dd>
-        </dl>
+<div class="col-md-6">
+    <div class="panel panel-default">
+        <div class="panel-heading"><span class="text-muted">Virtual Machine</span></div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <form role="form" action="/vagrant/command" method="get">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <select class="form-control" name="action">
+                                    <option>Start</option>
+                                    <option>Stop</option>
+                                    <option>Provision</option>
+                                    <option>Destroy</option>
+                                    <option>Suspend</option>
 
-        <h3><small>Project</small></h3>
-        <dl class="dl-horizontal">
-            <dt>Name</dt>
-            <dd><%=config.name%></dd>
+                                    <option value="start">Start</option>
+                                    <option value="stop">Stop</option>
+                                    <option value="provision">Provision</option>
+                                    <option value="suspend">Suspend</option>
+                                    <option value="destroy">Destroy</option>
+                                </select>
 
-            <dt>Created</dt>
-            <dd><%=moment(config.date_created).fromNow()%></dd>
+                                <p class="help-block">Select a VM action to perform</p>
+                            </div>
+                        </div>
 
-            <dt>Last Updated</dt>
-            <dd><%=moment(config.date_updated).fromNow()%></dd>
-        </dl>
-
-        <h3><small>Disk</small></h3>
-        <dl class="dl-horizontal">
-            <dt>Size</dt>
-            <dd>50G</dd>
-
-            <dt>Usage</dt>
-            <dd>15G</dd>
-        </dl>
-
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-8">
-        <div class="page-header">
-            <h3>Admin Area</h3>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 col-md-3">
-                <div style="max-width: 140px; margin: 0 auto 10px;" class="well">
-                    <a href="/system">
-                        System
-                    </a>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">Go</button>
+                            </div>
+                        </div>
+                    </form>
+                </div> <!-- /col-md-12 -->
+            </div> <!-- /row -->
+        </div> <!-- /panel-body -->
+    </div> <!-- /panel panel-default -->
+</div> <!-- /col-md-6 -->
+<div class="col-md-6">
+    <div class="panel panel-default">
+        <div class="panel-heading"><span class="text-muted">Project Information</span></div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                <div class="form-group row">
+                    <label class="col-sm-4 control-label">Name</label>
+                    <div class="col-sm-8"><%=config.name%></div>
                 </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div style="max-width: 140px; margin: 0 auto 10px;" class="well">
-                    <a href="/vagrant">
-                        Vagrant
-                    </a>
+                <div class="form-group row">
+                    <label class="col-sm-4 control-label">Stack</label>
+                    <div class="col-sm-8">LAMP</div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div> <!-- /dashboard -->
+                <div class="form-group row">
+                    <label class="col-sm-4 control-label">OS</label>
+                    <div class="col-sm-8">Centos 6.5 64bit</div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 control-label">Created</label>
+                    <div class="col-sm-8"><%=moment(config.date_created).fromNow()%></div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 control-label">Updated</label>
+                    <div class="col-sm-8"><%=moment(config.date_updated).fromNow()%></div>
+                </div>
+            </div> <!-- /col-md-12 -->
+        </div> <!-- /panel-body -->
+    </div> <!-- /panel panel-default -->
+</div> <!-- /col-md-6 -->
+</div><!--/col-span-9-->
