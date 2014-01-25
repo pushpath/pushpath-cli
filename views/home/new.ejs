@@ -72,6 +72,21 @@
                         </div>
                     </div>
                 </fieldset>
+                <fieldset>
+                    <legend><h5 class="text-muted">Synced Folder</h5></legend>
+                    <div class="form-group">
+                        <label for="config_vm_synced_folder_src" class="col-sm-4 control-label">Source</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="config_vm_synced_folder_src" placeholder="shared/www" value="" name="config_vm_synced_folder_src">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="config_vm_synced_folder_target" class="col-sm-4 control-label">Target</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="config_vm_synced_folder_target" placeholder="/vagrant_www" value="" name="config_vm_synced_folder_target">
+                        </div>
+                    </div>
+                </fieldset>
                 <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-10">
                         <button type="submit" class="btn btn-primary">Save</button> &nbsp;
